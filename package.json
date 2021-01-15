@@ -1,15 +1,23 @@
 {
   "name": "svelte-preprocess-remove-attribute",
   "version": "1.0.0",
-  "description": "Remove attribute from Svelte component",
+  "description": "Remove attribute from Svelte component.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ypyf/svelte-preprocess-remove-attribute.git"
   },
   "keywords": [
     "svelte",
     "preprocessor"
   ],
+  "bugs": {
+    "url": "https://github.com/ypyf/svelte-preprocess-remove-attribute/issues"
+  },
+  "homepage": "https://github.com/ypyf/svelte-preprocess-remove-attribute#readme",
   "author": "Yan Feng",
   "license": "MIT",
   "peerDependencies": {
