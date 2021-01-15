@@ -1,0 +1,18 @@
+{
+  "name": "svelte-preprocess-remove-attribute",
+  "version": "1.0.0",
+  "description": "Remove attribute from Svelte component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "svelte",
+    "preprocessor"
+  ],
+  "author": "Yan Feng",
+  "license": "MIT",
+  "peerDependencies": {
+    "svelte": ">=3"
+  }
+}
