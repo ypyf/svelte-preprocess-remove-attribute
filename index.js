@@ -9,6 +9,20 @@ module.exports = ({ filter } = {}) => {
   }
   return {
     markup({ content }) {
+      let scriptBlock, scriptMark, styleBlock, styleMark;
+
+      content = content
+        .replace(/<script[\s\S]*<\/script>/, (s) => {
+          scriptBlock = s;
+          scriptMark = `<!--${Math.random()}${Math.random()}${Math.random()}${Math.random()}-->`;
+          return scriptMark;
+        })
+        .replace(/<style[\s\S]*<\/style>/, (s) => {
+          styleBlock = s;
+          styleMark = `<!--${Math.random()}${Math.random()}${Math.random()}${Math.random()}-->`;
+          return styleMark;
+        });
+
       const ast = svelte.parse(content);
       if (ast.html) {
         let offset = 0;
@@ -29,7 +43,16 @@ module.exports = ({ filter } = {}) => {
             }
           },
         });
+
+        if (scriptBlock) {
+          content = content.replace(scriptMark, scriptBlock);
+        }
+
+        if (styleBlock) {
+          content = content.replace(styleMark, styleBlock);
+        }
       }
+
       return {
         code: content,
       };
