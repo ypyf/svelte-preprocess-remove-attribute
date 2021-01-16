@@ -11,25 +11,20 @@ const content = `
   const { rowGhost } = manager;
 
   $: index = $rowGhost.index;
-  $: height = $rowGhost.height;
   $: columnText = $rowGhost.columnText;
-  $: columnWidths = $rowGhost.columnWidths;
   );
 </script>
 
-<div class="row row-ghost" style="{ghostStyle}" bind:this="{ref}">
-  <div class="drag-handle" data-testid="dragHandle">{index + 1}</div>
-  {#each columnText as text, i}
-    <div class="cell" style="{cellStyles[i]}">{text}</div>
-  {/each}
-</div>
-
+<div class="drag-handle" data-test="dragHandle">{index + 1}</div>
+{#each columnText as text, i}
+  <div class="cell" style="{cellStyles[i]}">{text}</div>
+{/each}
 `;
 
 console.log(
   preprocessor({
     filter: (name) => {
-      return name !== "data-testid";
+      return name !== "data-test";
     },
   }).markup({ content }).code
 );

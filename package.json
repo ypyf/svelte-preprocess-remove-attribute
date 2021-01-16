@@ -1,6 +1,6 @@
 {
   "name": "svelte-preprocess-remove-attribute",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Remove attribute from Svelte component.",
   "main": "index.js",
   "scripts": {
