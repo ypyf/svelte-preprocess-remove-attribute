@@ -13,7 +13,7 @@ module.exports = ({ filter } = {}) => {
 
       content = content
         .replace(/<script[\s\S]*<\/script>/, (s) => {
-          scriptBlock = s;
+          scriptBlock = s.replace(/\$\$/g, "$$$$$");
           scriptMark = `<!--${Math.random()}${Math.random()}${Math.random()}${Math.random()}-->`;
           return scriptMark;
         })
